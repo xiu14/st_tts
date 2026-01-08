@@ -1,9 +1,9 @@
 import { extension_settings, getContext, loadExtensionSettings } from "../../../extensions.js";
 import { saveSettingsDebounced, eventSource, event_types } from "../../../../script.js";
 
-// 扩展配置
-const extensionName = "extension";
-const extensionFolderPath = `scripts/extensions/third-party/${extensionName}`;
+// 扩展配置 - 自动检测实际文件夹名
+const extensionFolderPath = import.meta.url.slice(0, import.meta.url.lastIndexOf("/"));
+const extensionName = extensionFolderPath.split("/").pop();
 
 // 全局状态管理
 const audioState = {
