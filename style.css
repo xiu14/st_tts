@@ -131,10 +131,33 @@
 
 .siliconflow-extension-settings .inline-drawer-icon {
     transition: transform 0.3s;
+    font-size: 0.8em;
 }
 
 .siliconflow-extension-settings .inline-drawer-icon.down {
     transform: rotate(180deg);
+}
+
+/* 子折叠面板样式 */
+.siliconflow-extension-settings .sub-drawer {
+    margin: 8px 0;
+    border: 1px solid var(--SmartThemeBorderColor, #555);
+    border-radius: 4px;
+}
+
+.siliconflow-extension-settings .sub-drawer .inline-drawer-header {
+    padding: 8px 12px;
+    font-size: 0.95em;
+}
+
+.siliconflow-extension-settings .sub-drawer .inline-drawer-header span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.siliconflow-extension-settings .sub-drawer .inline-drawer-content {
+    padding: 12px;
 }
 
 /* 子分区样式 */
@@ -149,4 +172,69 @@
     margin-bottom: 10px;
     color: var(--SmartThemeBodyColor, #495057);
     font-size: 1.1em;
+}
+
+/* 文件上传按钮样式 - 使其在深色主题下可见 */
+.siliconflow-extension-settings input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 2px dashed var(--SmartThemeBorderColor, #666);
+    border-radius: 6px;
+    background-color: var(--SmartThemeBlurTintColor, rgba(50, 50, 50, 0.5));
+    color: var(--SmartThemeBodyColor, #ccc);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.siliconflow-extension-settings input[type="file"]:hover {
+    border-color: var(--SmartThemeQuoteColor, #888);
+    background-color: var(--SmartThemeHoverColor, rgba(80, 80, 80, 0.5));
+}
+
+.siliconflow-extension-settings input[type="file"]:focus {
+    outline: none;
+    border-color: var(--SmartThemeQuoteColor, #aaa);
+}
+
+/* 文件上传按钮的::file-selector-button 样式 */
+.siliconflow-extension-settings input[type="file"]::file-selector-button {
+    padding: 8px 16px;
+    margin-right: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--SmartThemeQuoteColor, #666);
+    color: var(--SmartThemeBodyColor, #fff);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.siliconflow-extension-settings input[type="file"]::file-selector-button:hover {
+    background-color: var(--SmartThemeHoverColor, #888);
+}
+
+/* TTS播放按钮样式 - 消息楼层中的按钮 */
+.mes_button.tts-play-btn {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.mes_button.tts-play-btn:hover {
+    opacity: 1;
+    color: var(--SmartThemeQuoteColor, #4a9eff);
+    transform: scale(1.1);
+}
+
+.mes_button.tts-play-btn i.fa-spinner {
+    color: var(--SmartThemeQuoteColor, #4a9eff);
+}
+
+.mes_button.tts-play-btn i.fa-stop {
+    color: #ff6b6b;
+}
+
+.mes_button.tts-play-btn i.fa-volume-high {
+    color: inherit;
 }
