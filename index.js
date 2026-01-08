@@ -711,6 +711,15 @@ jQuery(async () => {
   $("#upload_voice").on("click", uploadVoice);
   $("#refresh_custom_voices").on("click", loadCustomVoices);
 
+  // 自定义音频选择按钮
+  $("#select_audio_btn").on("click", function () {
+    $("#clone_voice_audio").click();
+  });
+  $("#clone_voice_audio").on("change", function () {
+    const fileName = this.files[0] ? this.files[0].name : "未选择文件";
+    $("#selected_audio_name").text(fileName);
+  });
+
   // 删除音色事件（使用事件委托）
   $(document).on("click", ".delete-voice", function () {
     const uri = $(this).data("uri");

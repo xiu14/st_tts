@@ -93,8 +93,13 @@
                         <input type="text" id="clone_voice_text" placeholder="输入音频对应的文本内容" />
                     </div>
                     <div class="setting-item">
-                        <label for="clone_voice_audio">参考音频：</label>
-                        <input type="file" id="clone_voice_audio" accept="audio/*" />
+                        <label>参考音频：</label>
+                        <input type="file" id="clone_voice_audio" accept="audio/*" style="display: none;" />
+                        <div class="file-upload-wrapper">
+                            <button type="button" id="select_audio_btn" class="menu_button">📁 选择音频文件</button>
+                            <span id="selected_audio_name"
+                                style="margin-left: 10px; color: var(--SmartThemeBodyColor, #aaa);">未选择文件</span>
+                        </div>
                         <small>支持mp3, wav格式，建议5-10秒清晰语音</small>
                     </div>
                     <div class="setting-item button-group">
